@@ -25,10 +25,33 @@
     <header class="tm-header text-center">
       <h1 class="tm-title text-uppercase" style="font-size: 60px; font-weight: bold; color: white;">MAJALAH</h1>
       <!-- Pemutar Musik -->
-      <audio controls autoplay loop>
-        <source src="music/danheim.mp3" type="audio/mpeg">
-        Browser kamu tidak mendukung audio tag.
-      </audio>
+      <audio id="bg-music" loop muted>
+  <source src="music/danheim.mp3" type="audio/mpeg" />
+  Browser kamu tidak mendukung audio tag.
+</audio>
+
+<button id="play-btn" style="font-size:18px; padding:10px 20px; margin-top:20px;">
+  Play Musik
+</button>
+
+<script>
+  const music = document.getElementById('bg-music');
+  const playBtn = document.getElementById('play-btn');
+
+  // Coba autoplay muted saat load
+  window.addEventListener('load', () => {
+    music.play().catch(e => {
+      console.log('Autoplay muted gagal:', e);
+    });
+  });
+
+  // Saat tombol diklik, unmute dan mainkan musik
+  playBtn.addEventListener('click', () => {
+    music.muted = false;
+    music.play();
+    playBtn.style.display = 'none';  // sembunyikan tombol setelah play
+  });
+</script>
     </header>
 
     <section class="tm-section">
