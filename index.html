@@ -24,41 +24,23 @@
   <div class="tm-page-container mx-auto">
     <header class="tm-header text-center">
       <h1 class="tm-title text-uppercase" style="
-  font-size: 50px;
+  font-size: 100px;
   font-weight: normal; /* Hilangkan bold */
   color: white;
   font-family: 'UnifrakturCook', cursive;
-  -webkit-text-stroke: 2px rgb(0, 0, 0); /* Stroke hitam */
+  -webkit-text-stroke: 4px rgb(0, 0, 0); /* Stroke hitam */
 ">
-  MAJALAH</h1>
+  MAJALAH
+</h1>
       <!-- Pemutar Musik -->
       <audio id="bg-music" loop muted>
   <source src="music/danheim.mp3" type="audio/mpeg" />
   Browser kamu tidak mendukung audio tag.
 </audio>
 
-<button id="play-btn" style="font-size:18px; padding:10px 20px; margin-top:20px;">
-  Play Musik
-</button>
-
-<script>
-  const music = document.getElementById('bg-music');
-  const playBtn = document.getElementById('play-btn');
-
-  // Coba autoplay muted saat load
-  window.addEventListener('load', () => {
-    music.play().catch(e => {
-      console.log('Autoplay muted gagal:', e);
-    });
-  });
-
-  // Saat tombol diklik, unmute dan mainkan musik
-  playBtn.addEventListener('click', () => {
-    music.muted = false;
-    music.play();
-    playBtn.style.display = 'none';  // sembunyikan tombol setelah play
-  });
-</script>
+          <button id="play-btn" style="font-size:18px; padding:10px 20px; margin-top:20px;">
+             Play Musik
+          </button>
     </header>
 
     <section class="tm-section">
@@ -75,26 +57,26 @@
           </li>
         </ul>
       </nav>
-        <div class="tm-content-container" style="
-                background-color: rgba(255, 255, 255, 0.493);  /* Putih transparan */
-                padding: 30px;
-                border-radius: 15px;
-                max-width: 700px;
-                margin: 0 auto;
-                box-shadow: 0 9px 20px rgba(0, 0, 0, 0.3); /* Bayangan opsional */
-              ">
+      <div class="tm-content-container" style="
+  background-color: rgba(255, 255, 255, 0.493);  /* Putih transparan */
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 700px;
+  margin: 0 auto;
+  box-shadow: 0 9px 20px rgba(0, 0, 0, 0.3); /* Bayangan opsional */
+">
         <figure class="mb-0">
           <img src="img/imgs.jpg" alt="Image" class="img-fluid tm-img" />
         </figure>
         <div class="tm-content">
           <h1 class="tm-page-title" style="
-                text-align: center;
-                font-weight: bold;
-                color: black; /* warna isi teks */
-                -webkit-text-stroke: 1px rgba(255, 255, 255, 0.788); /* stroke putih */
-              ">
-                RIGIAR AGUERO
-              </h1>
+  text-align: center;
+  font-weight: bold;
+  color: black; /* warna isi teks */
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.788); /* stroke putih */
+">
+  RIGIAR AGUERO
+</h1>
 
           <div class="border border-dark border-2 shadow p-4" >
           <p class="mb-4" style="text-align:center; color: black;">
@@ -126,6 +108,24 @@
       <span>designed by reggie</span>
     </footer>
   </div>
+  <script>
+  const music = document.getElementById('bg-music');
+  const playBtn = document.getElementById('play-btn');
+
+  // Coba autoplay muted saat load
+  window.addEventListener('load', () => {
+    music.play().catch(e => {
+      console.log('Autoplay muted gagal:', e);
+    });
+  });
+
+  // Saat tombol diklik, unmute dan mainkan musik
+  playBtn.addEventListener('click', () => {
+    music.muted = false;
+    music.play();
+    playBtn.style.display = 'none';  // sembunyikan tombol setelah play
+  });
+</script>
 </body>
 
 </html>
